@@ -2,36 +2,32 @@
 import { useContext } from "react";
 // Importando Componentes
 import { Contexto } from "../Context/Contexto";
+import Paginacion from "./Paginacion";
 import Personajes from "./Personajes";
 
 function ListaPersonajes() {
 	//Inicializando Contexto y obteniendo filtro
-	const { personjesFiltrados, cargando, filtro } = useContext(Contexto);
+	const { personjesFiltrados, cargando, filtro, busqueda } =
+		useContext(Contexto);
 
 	return (
-		<div className="row">
-			{cargando ? (
-				<p>Cargando...</p>
-			) : personjesFiltrados.length > 0 ? (
-				personjesFiltrados.map((personaje) => (
-					<div key={personaje.id} className="col-md-4">
-						<Personajes personaje={personaje} />
-					</div>
-				))
-			) : (
-				<p>
-					No se encontro personajes con la busqueda{" "}
-					<strong>"{filtro}"</strong>.
-				</p>
-			)}
-
-			{/* {personjesFiltrados.map((personaje) => {
-					return (
-						<div key={personaje.id} className="col-md-4">
-							<Personajes personaje={personaje} />
-						</div>
-					);
-				})} */}
+		<div className="container">
+			<Paginacion />
+			<div className="lista-personajes">
+				{cargando ? (
+					<p>Cargando...</p>
+				) : busqueda.length > 0 ? (
+					busqueda.map((personaje) => (
+						<Personajes key={personaje.id} personaje={personaje} />
+					))
+				) : (
+					<p>
+						No se encontro personajes con la busqueda{" "}
+						<strong>"{filtro}"</strong>.
+					</p>
+				)}
+			</div>
+			<Paginacion />
 		</div>
 	);
 }

@@ -13,14 +13,14 @@ const FiltrarPersonajes = () => {
 	};
 
 	return (
-		<div>
+		<section className="filtrar">
 			<input
 				type="text"
 				placeholder="Buscar personaje ... "
 				onChange={handleInput}
 				value={filtro}
 			/>
-		</div>
+		</section>
 	);
 };
 
