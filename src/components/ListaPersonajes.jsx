@@ -1,12 +1,24 @@
+// Importando Hooks
+import { useContext } from "react";
 // Importando Componentes
+import { Contexto } from "../Context/Contexto";
 import Personajes from "./Personajes";
 
-function ListaPersonajes({ personajes }) {
+function ListaPersonajes() {
+	//Inicializando Contexto y obteniendo filtro
+	const { personjesFiltrados } = useContext(Contexto);
+
 	return (
-		<div>
-			{personajes.map((personaje) => {
-				return <Personajes key={personaje.id} personaje={personaje} />;
-			})}
+		<div className="container bg-danger">
+			<div className="row">
+				{personjesFiltrados.map((personaje) => {
+					return (
+						<div key={personaje.id} className="col-md-4">
+							<Personajes personaje={personaje} />
+						</div>
+					);
+				})}
+			</div>
 		</div>
 	);
 }
