@@ -8,6 +8,7 @@ export const TaskContextProvider = (props) => {
 	//Creando useState
 	const [filtro, setFiltro] = useState("");
 	const [personajes, setPersonajes] = useState([]);
+	const [cargando, setCargando] = useState(true);
 
 	//Creando UseEffect para cargar API por unica vez cuando carga la pagina
 	useEffect(() => {
@@ -17,10 +18,12 @@ export const TaskContextProvider = (props) => {
 				const respuesta = await fetch(URL);
 				const datos = await respuesta.json();
 				setPersonajes(datos.results);
+				setCargando(false);
 			} catch (error) {
 				console.log(error);
 			}
 		}
+		//Cargando datos de la api
 		getPersonajes();
 	}, []);
 
@@ -32,7 +35,13 @@ export const TaskContextProvider = (props) => {
 	return (
 		<>
 			<Contexto.Provider
-				value={{ personjesFiltrados, filtro, setFiltro }}
+				value={{
+					personjesFiltrados,
+					filtro,
+					setFiltro,
+					cargando,
+					setCargando,
+				}}
 			>
 				{props.children}
 			</Contexto.Provider>

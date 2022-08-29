@@ -6,19 +6,32 @@ import Personajes from "./Personajes";
 
 function ListaPersonajes() {
 	//Inicializando Contexto y obteniendo filtro
-	const { personjesFiltrados } = useContext(Contexto);
+	const { personjesFiltrados, cargando, filtro } = useContext(Contexto);
 
 	return (
-		<div className="container bg-danger">
-			<div className="row">
-				{personjesFiltrados.map((personaje) => {
+		<div className="row">
+			{cargando ? (
+				<p>Cargando...</p>
+			) : personjesFiltrados.length > 0 ? (
+				personjesFiltrados.map((personaje) => (
+					<div key={personaje.id} className="col-md-4">
+						<Personajes personaje={personaje} />
+					</div>
+				))
+			) : (
+				<p>
+					No se encontro personajes con la busqueda{" "}
+					<strong>"{filtro}"</strong>.
+				</p>
+			)}
+
+			{/* {personjesFiltrados.map((personaje) => {
 					return (
 						<div key={personaje.id} className="col-md-4">
 							<Personajes personaje={personaje} />
 						</div>
 					);
-				})}
-			</div>
+				})} */}
 		</div>
 	);
 }
