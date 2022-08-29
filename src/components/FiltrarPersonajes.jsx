@@ -16,7 +16,7 @@ const FiltrarPersonajes = () => {
 		<section className="filtrar">
 			<input
 				type="text"
-				placeholder="Buscar personaje ... "
+				placeholder="Filtrar por nombre, genero, estado o especie ... "
 				onChange={handleInput}
 				value={filtro}
 			/>

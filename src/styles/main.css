@@ -23,18 +23,11 @@ body {
 	color: var(--color-light);
 }
 
-.container {
-	width: 90%;
-	max-width: 120rem;
-	padding: 0 2rem;
-	margin: 0 auto;
+.foto {
+	width: 60rem;
+	margin: auto;
 }
-
-.logo {
-	width: 22rem;
-	margin: 4rem auto;
-}
-.logo img {
+.foto img {
 	width: 100%;
 }
 
@@ -44,6 +37,12 @@ body {
 	margin: 0 auto;
 	margin-bottom: 4rem;
 }
+
+.filtrar ::placeholder {
+	color: --color-dark;
+	font-size: 1.5em;
+}
+
 input {
 	height: 4rem;
 	border: none;
@@ -106,6 +105,17 @@ input {
 .unknown {
 	background: #afafaf;
 }
+
+.paginacion p {
+	font-size: 1.5rem;
+}
+
+.paginacion button {
+	font-size: 1.5rem;
+	color: white;
+	background-color: #28527a;
+	border: none;
+}
 .personaje-body {
 	padding: 8rem 2rem 4rem;
 	position: relative;
@@ -136,17 +146,18 @@ input {
 	line-height: 3rem;
 	text-align: center;
 	transition-property: background, color;
-	font-size: 1.8rem;
+	font-size: 1.9rem;
 }
 .personaje-body p {
 	width: 100%;
-	background: rgba(219, 246, 233, 0.9);
+	background: #ffff;
 	color: var(--color-dark);
 	border-radius: 0.5rem;
 	height: 4rem;
 	margin-top: 2rem;
 	line-height: 4rem;
 	text-align: center;
+	font-size: 1.7rem;
 }
 .personaje-body p span {
 	font-weight: bold;
