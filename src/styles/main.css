@@ -19,7 +19,7 @@ body {
 	font-size: 1.6rem;
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
 		sans-serif;
-	background: var(--color-dark);
+	background: var(--color-dark) !important;
 	color: var(--color-light);
 }
 
@@ -38,11 +38,6 @@ body {
 	margin-bottom: 4rem;
 }
 
-.filtrar ::placeholder {
-	color: --color-dark;
-	font-size: 1.5em;
-}
-
 input {
 	height: 4rem;
 	border: none;
@@ -50,6 +45,7 @@ input {
 	padding: 0 1rem;
 	outline: var(--color-primary);
 	width: 100%;
+	font-size: 1.5rem !important;
 }
 
 .lista-personajes {
@@ -59,8 +55,14 @@ input {
 	gap: 4rem;
 }
 
+.lista-personajes p {
+	font-size: 1.6rem;
+	width: max-content;
+	color: white;
+}
+
 .personaje {
-	background: var(--color-secondary);
+	background: #f4f47e;
 	border-radius: 0.3rem;
 	box-shadow: 0 0 1rem 0 rgba(255, 255, 255, 0.1);
 	display: grid;
@@ -104,6 +106,10 @@ input {
 }
 .unknown {
 	background: #afafaf;
+}
+
+.paginacion {
+	color: white;
 }
 
 .paginacion p {

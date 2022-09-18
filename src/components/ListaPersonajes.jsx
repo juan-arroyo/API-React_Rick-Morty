@@ -7,8 +7,7 @@ import Personajes from "./Personajes";
 
 function ListaPersonajes() {
 	//Inicializando Contexto y obteniendo filtro
-	const { personjesFiltrados, cargando, filtro, busqueda } =
-		useContext(Contexto);
+	const { cargando, filtro, busqueda } = useContext(Contexto);
 
 	return (
 		<div className="container">
