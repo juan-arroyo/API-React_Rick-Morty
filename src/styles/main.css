@@ -1,3 +1,4 @@
+/* REINICIO ESTILO NAVEGADORES */
 * {
 	margin: 0;
 	padding: 0;
@@ -8,6 +9,7 @@ html {
 	font-size: 62.5%;
 }
 
+/* VARIABLE COLORES */
 :root {
 	--color-primary: #08b2c9;
 	--color-secondary: #28527a;
@@ -209,5 +211,9 @@ input {
 	}
 	.lista-personajes {
 		grid-template-columns: repeat(1, 1fr);
+	}
+	input {
+		font-size: 1rem !important;
+		width: 65%;
 	}
 }
