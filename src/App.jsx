@@ -6,14 +6,15 @@ import foto from "./assets/foto.png";
 function App() {
 	return (
 		<div>
-			<figure className="foto">
+			<figure className="text-center p-3 mb-5">
 				<a href="index.html">
-					<img src={foto} alt="Logo de Rick & Morty" />
+					<img
+						className="image_size img-fluid "
+						src={foto}
+						alt="Logo de Rick & Morty"
+					/>
 				</a>
 			</figure>
-			<h1 className="text-center text-white display-1 py-4">
-				Rick and Morty
-			</h1>
 			<FiltrarPersonajes />
 			<ListaPersonajes />
 		</div>

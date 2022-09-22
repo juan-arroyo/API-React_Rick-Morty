@@ -13,14 +13,16 @@ const FiltrarPersonajes = () => {
 	};
 
 	return (
-		<section className="filtrar">
-			<input
-				type="text"
-				placeholder="Filtrar por nombre, genero, estado o especie ... "
-				onChange={handleInput}
-				value={filtro}
-			/>
-		</section>
+		<>
+			<section className="filtrar">
+				<input
+					type="text"
+					placeholder="Filtrar por nombre, genero, estado o especie ... "
+					onChange={handleInput}
+					value={filtro}
+				/>
+			</section>
+		</>
 	);
 };
 

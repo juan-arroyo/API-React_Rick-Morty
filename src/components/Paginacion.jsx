@@ -13,14 +13,9 @@ const Paginacion = () => {
 	};
 
 	return (
-		<div className="paginacion d-flex justify-content-between align-items-center mt-3">
+		<div className="paginacion ">
 			<p>Pagina {page}</p>
-			<button
-				className="btn btn-primary btn-lg mb-3"
-				onClick={handleClick}
-			>
-				Pagina {page + 1}
-			</button>
+			<button onClick={handleClick}>Pagina {page + 1}</button>
 		</div>
 	);
 };

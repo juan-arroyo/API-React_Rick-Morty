@@ -23,19 +23,14 @@ body {
 	color: var(--color-light);
 }
 
-.foto {
+.image_size {
 	width: 60rem;
-	margin: auto;
-}
-.foto img {
-	width: 100%;
 }
 
 .filtrar {
-	width: 100%;
-	max-width: 60rem;
 	margin: 0 auto;
 	margin-bottom: 4rem;
+	text-align: center;
 }
 
 input {
@@ -44,15 +39,21 @@ input {
 	border-radius: 0.5rem;
 	padding: 0 1rem;
 	outline: var(--color-primary);
-	width: 100%;
-	font-size: 1.5rem !important;
+	width: 50%;
+	font-size: 1.3rem !important;
+}
+
+.container-personajes {
+	margin: 0 10rem 0 10rem;
 }
 
 .lista-personajes {
 	width: 100%;
 	display: grid;
-	grid-template: auto / 1fr;
-	gap: 4rem;
+	/* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+	grid-template-columns: repeat(5, 1fr);
+	gap: 3rem;
+	margin-bottom: 1.5rem;
 }
 
 .lista-personajes p {
@@ -69,6 +70,7 @@ input {
 	grid-template: 10rem auto / 1fr;
 	overflow: hidden;
 	animation: showCard 0.5s linear;
+	border-radius: 1rem;
 }
 @keyframes showCard {
 	from {
@@ -110,6 +112,9 @@ input {
 
 .paginacion {
 	color: white;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1.5rem;
 }
 
 .paginacion p {
@@ -117,10 +122,14 @@ input {
 }
 
 .paginacion button {
-	font-size: 1.5rem;
-	color: white;
-	background-color: #28527a;
+	background-color: #00b1cb;
 	border: none;
+	color: white;
+	padding: 5px;
+	text-align: center;
+	font-size: 1.5rem;
+	margin: 4px 2px;
+	border-radius: 0.5rem;
 }
 .personaje-body {
 	padding: 8rem 2rem 4rem;
@@ -152,7 +161,7 @@ input {
 	line-height: 3rem;
 	text-align: center;
 	transition-property: background, color;
-	font-size: 1.9rem;
+	font-size: 1.7rem;
 }
 .personaje-body p {
 	width: 100%;
@@ -169,14 +178,36 @@ input {
 	font-weight: bold;
 }
 
-@media screen and (min-width: 600px) {
+/* ==================== BREAKPOINTS ====================  */
+@media screen and (max-width: 2200px) {
 	.lista-personajes {
-		grid-template: auto / repeat(2, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 	}
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (max-width: 1800px) {
 	.lista-personajes {
-		grid-template: auto / repeat(3, 1fr);
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media screen and (max-width: 1250px) {
+	.lista-personajes {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 850px) {
+	.container-personajes {
+		margin: 0 5rem 0 5rem;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.container-personajes {
+		margin: 0 4rem 0 4rem;
+	}
+	.lista-personajes {
+		grid-template-columns: repeat(1, 1fr);
 	}
 }
